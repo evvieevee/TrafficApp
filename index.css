@@ -1,0 +1,27 @@
+
+.header {
+    background-color: #1C6758;
+    height: 150px;
+    width: auto;
+    margin: none;
+    font-size: 40px;
+}
+
+
+button{
+    background-color: #3D8361;
+    margin: 5px;
+    height: 35px;
+    width: 200px;
+    font-size: 20px;
+}
+
+body{
+    background-color: #EEF2E6;
+}
+#inputField{
+    height: 30px;
+    width: 250px; 
+    margin: 5px;
+}
+
