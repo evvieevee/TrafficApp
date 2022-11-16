@@ -5,8 +5,14 @@
     width: auto;
     margin: none;
     font-size: 40px;
-}
 
+}
+h1{
+    font-size: 50px;
+    margin: 0;
+    margin-left: 20px;
+   padding-top: 10px;
+}
 
 button{
     background-color: #3D8361;
@@ -18,10 +24,40 @@ button{
 
 body{
     background-color: #EEF2E6;
+    margin: 0;
 }
 #inputField{
     height: 30px;
     width: 250px; 
-    margin: 5px;
+    margin: 10px 20px 0 40px;
+}
+.arrival {
+    
+}
+.departure {
+   
+}
+li {
+    background-color: #FFFACD;
+    border: 1px black solid;
+    width: 600px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.footer{
+    background-color: rgb(31, 30, 30);
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+
+}
+p{
+    color: white;
+    padding: 10px;
+    text-align: center;
+
+    
 }
 

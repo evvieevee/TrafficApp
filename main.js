@@ -18,10 +18,12 @@ function getTrainTime(listaJunia, stationShortCode) {
         li.textContent = juna.trainNumber;
         const times = findTimeStamps(juna.timeTableRows, stationShortCode);
         const divArrival = document.createElement("div");
-        divArrival.textContent = "Arrival: " + times.find(x => x.type === "ARRIVAL").scheduledTime;
+        divArrival.textContent = "Saapumisaika: " + times.find(x => x.type === "ARRIVAL").scheduledTime;
+        divArrival.className="Saapumisaika";
         li.appendChild(divArrival);
         const divDeparture = document.createElement("div");
-        divDeparture.textContent = "Departure: " + times.find(x => x.type === "DEPARTURE").scheduledTime;
+        divDeparture.textContent = "Lähtöaika: " + times.find(x => x.type === "DEPARTURE").scheduledTime;
+        divDeparture.className="Lähtöaika"
         li.appendChild(divDeparture);
         listElement.appendChild(li);
     });
