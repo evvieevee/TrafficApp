@@ -31,6 +31,7 @@ function getTrainTime(listaJunia, stationShortCode) {
 
 async function onClickEvent(){
    const text = document.getElementById("inputField").value
+   document.getElementById("asemanNimi").textContent = text;
    const found = stations.find(x => x.stationName === text);
    const dateNow = new Date();
    const trains = await getData(`https://rata.digitraffic.fi/api/v1/live-trains/station/${found.stationShortCode}`);

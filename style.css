@@ -12,6 +12,7 @@ h1{
     margin: 0;
     margin-left: 20px;
    padding-top: 10px;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 button{
@@ -20,6 +21,7 @@ button{
     height: 35px;
     width: 200px;
     font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body{
@@ -30,20 +32,23 @@ body{
     height: 30px;
     width: 250px; 
     margin: 10px 20px 0 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .arrival {
-    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .departure {
-   
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 li {
-    background-color: #FFFACD;
+    background-color: #D6CDA4;
     border: 1px black solid;
     width: 600px;
     border-radius: 5px;
     list-style: none;
-}
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
 
 .footer{
     background-color: rgb(31, 30, 30);
@@ -57,7 +62,15 @@ p{
     color: white;
     padding: 10px;
     text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
-    
+#asemanNimi{
+    display: block;
+    height: 25px;
+    margin: 15px 15px 15px 40px;
+    font-style:bold;
+    font-size: 25px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
