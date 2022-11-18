@@ -5,17 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>dfsfsdsdf</title>
+    <title>Juna aikataulut</title>
 </head>
 <div class="header"> <h1>Juna aikataulut </h1> </div>
 <body>
-    <input type="text" id="inputField">
-    <button onclick="onClickEvent();" >Hae aikataulut</button>
-    <div id="asemanNimi">dfdggddgdg</div>
+
+    <form autocomplete="off" onsubmit="onClickEvent(); return false;">
+        <div class="autocomplete" style="width:300px;">
+          <input id="inputField" type="text" name="myCountry" placeholder="Aseman nimi">
+        </div>
+        <input title="Hae aikataulut" value="Hae aikataulut" type="submit">
+    </form>
+    <div id="asemanNimi"></div>
 
     <ul id="list">
         
     </ul>
+    <script src="autoComplete.js"></script>
     <script src="main.js"></script>
     <div class="footer">
         <p> 2022</p>

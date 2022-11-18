@@ -13,6 +13,7 @@ function findTimeStamps(timeStamps, stationShortCode) {
 
 function getTrainTime(listaJunia, stationShortCode) {
     const listElement = document.getElementById('list');
+    listElement.innerHTML = "";
     listaJunia.forEach(juna => {
         const li = document.createElement("li");
         li.textContent = juna.trainNumber;
@@ -32,7 +33,7 @@ function getTrainTime(listaJunia, stationShortCode) {
 async function onClickEvent(){
    const text = document.getElementById("inputField").value
    document.getElementById("asemanNimi").textContent = text;
-   const found = stations.find(x => x.stationName === text);
+   const found = stations.find(x => x.stationName.toLowerCase() === text.toLowerCase());
    const dateNow = new Date();
    const trains = await getData(`https://rata.digitraffic.fi/api/v1/live-trains/station/${found.stationShortCode}`);
 
@@ -45,7 +46,8 @@ async function onClickEvent(){
 
 (async function init() {
     stations = await getData('https://rata.digitraffic.fi/api/v1/metadata/stations');
-    stationsNames = stations.map(x => x.stationName)
-    console.log(stations)
+    stationsNames = stations.map(x => x.stationName);
+    autocomplete(document.getElementById("inputField"), stationsNames)
+    console.log(stationsNames)
 })()
 
