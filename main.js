@@ -1,8 +1,23 @@
 let stations = [];
 let stationsNames = [];
 
+function createAjax(url) {
+    return new Promise((resolve, reject) => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = () => {
+            if(xhttp.readyState === 4) {
+                resolve(JSON.parse(xhttp.responseText))
+            }
+        }
+        xhttp.open('GET', url, true);
+        xhttp.send();
+    })
+}
+
+
 async function getData(url) {
-    return await fetch(url).then(x => x.json())
+    //return await fetch(url).then(x => x.json())
+    return await createAjax(url).then(x => x).catch(error => console.error(error));
 }
 
 function findTimeStamps(timeStamps, stationShortCode) {
@@ -19,11 +34,11 @@ function getTrainTime(listaJunia, stationShortCode) {
         li.textContent = juna.trainNumber;
         const times = findTimeStamps(juna.timeTableRows, stationShortCode);
         const divArrival = document.createElement("div");
-        divArrival.textContent = "Saapumisaika: " + times.find(x => x.type === "ARRIVAL").scheduledTime;
+        divArrival.textContent = "Saapumisaika: " + new Date(times.find(x => x.type === "ARRIVAL").scheduledTime).toLocaleString("en-FI").slice(0, -3);
         divArrival.className="Saapumisaika";
         li.appendChild(divArrival);
         const divDeparture = document.createElement("div");
-        divDeparture.textContent = "Lähtöaika: " + times.find(x => x.type === "DEPARTURE").scheduledTime;
+        divDeparture.textContent = "Lähtöaika: " + new Date(times.find(x => x.type === "DEPARTURE").scheduledTime).toLocaleString("en-FI").slice(0, -3);
         divDeparture.className="Lähtöaika"
         li.appendChild(divDeparture);
         listElement.appendChild(li);
