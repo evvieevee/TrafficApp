@@ -1,6 +1,7 @@
+// Tässä määritellään variablet(muuttujat) nimeltä asemat ja aseman nimet.
 let stations = [];
 let stationsNames = [];
-
+//Tässä tapahtuu AJAX kutsu, jossa pyydetään dataa urlin takaa päivittämättä sivua välissä. 
 function createAjax(url) {
     return new Promise((resolve, reject) => {
         const xhttp = new XMLHttpRequest();
@@ -17,6 +18,7 @@ function createAjax(url) {
 
 async function getData(url) {
     //return await fetch(url).then(x => x.json())
+    // Tässä tarkistetaan mahdolliset errorit. S
     return await createAjax(url).then(x => x).catch(error => console.error(error));
 }
 
@@ -25,7 +27,8 @@ function findTimeStamps(timeStamps, stationShortCode) {
     console.log(times);
     return times;
 }
-
+// Tässä haetaan junien aikataululista. Listassa on saapumis- ja lähtöajat. 
+//  Lista tulostaa päivämäärän, sekä tunnit ja minuutit. Sekunnit on otettu pois.
 function getTrainTime(listaJunia, stationShortCode) {
     const listElement = document.getElementById('list');
     listElement.innerHTML = "";
@@ -44,7 +47,7 @@ function getTrainTime(listaJunia, stationShortCode) {
         listElement.appendChild(li);
     });
 }
-
+// Tässä haetaan junat inputfieldiin syötetyn aseman mukaisesti. Eli junat, jotka pysähtyvät kyseisellä asemalla.
 async function onClickEvent(){
    const text = document.getElementById("inputField").value
    document.getElementById("asemanNimi").textContent = text;
@@ -58,7 +61,7 @@ async function onClickEvent(){
 
 }
 
-
+// Tässä haetaan junapysäkkien nimilista.
 (async function init() {
     stations = await getData('https://rata.digitraffic.fi/api/v1/metadata/stations');
     stationsNames = stations.map(x => x.stationName);
